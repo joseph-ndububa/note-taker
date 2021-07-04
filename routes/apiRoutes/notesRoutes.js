@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { notes } = require("../../develop/db/db");
+const { notes } = require("../../data/notes");
 const fs = require('fs');
 
 router.get("/notes", (req, res) => {
@@ -9,18 +9,10 @@ router.get("/notes", (req, res) => {
 });
 
 router.post("/notes", (req, res) => {
-    notes.push(req.body);
-    console.log(notes);
-    const noteData = `${notes}`;
-
-    fs.writeFile('../../develop/db/db', noteData, err => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            console.log("db updated");
-        }
-    })
+    let newNote = req.body;
+    console.log(newNote);
+    notes.push(newNote);
+    res.send(newNote);
 });
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const { notes } = require('./develop/db/db.json');
+const { notes } = require('./data/notes');
 const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 3001;
