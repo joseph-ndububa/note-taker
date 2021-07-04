@@ -1,20 +1,14 @@
 {
-    "notes": [
-        {
-            "title": "Test Title",
-            "text": "Test text"
-        },
-        {
-            "title": "Test Title",
-            "text": "Test text"
-        },
-        {
-            "title": "Test Title",
-            "text": "Test text"
-        },
-        {
-            "title": "Test Title",
-            "text": "Test text"
-        }
-    ]
+  "noteArray": [
+    {
+      "title": "wergwergwergwer",
+      "text": "gerwgrewgwregwerreg",
+      "id": "0"
+    },
+    {
+      "title": "rwegwregrewg",
+      "text": "erwgwergwerwerge",
+      "id": "1"
+    }
+  ]
 }
