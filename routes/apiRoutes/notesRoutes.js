@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { notes } = require("../../data/notes");
-const fs = require('fs');
 const { addNewNote, generateId, validateNote, deleteNote } = require('../../lib/notes.js');
 
 router.get("/notes", (req, res) => {
@@ -10,17 +9,24 @@ router.get("/notes", (req, res) => {
 router.post("/notes", (req, res) => {
     req.body.id = generateId(notes);
     let newNote = req.body;
-    console.log(newNote);
     if (validateNote(newNote)) {
         addNewNote(newNote, notes);
         res.send(newNote);
+    }
+    else {
+        res.sendStatus(400);
     }
 });
 
 router.delete("/notes/:id", (req, res) => {
     let noteId = req.params.id;
-    deleteNote(noteId, notes);
-    res.sendStatus(200);
+    if (!deleteNote(noteId, notes)) {
+        res.sendStatus(404);
+    }
+    else {
+        deleteNote(noteId, notes);
+        res.sendStatus(200);
+    }
 });
 
 module.exports = router;
