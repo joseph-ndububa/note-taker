@@ -1,21 +1,20 @@
 const router = require("express").Router();
 const { notes } = require("../../data/notes");
 const fs = require('fs');
-const createNewNote = require('../../lib/notes.js');
+const { addNewNote, generateId, validateNote } = require('../../lib/notes.js');
 
 router.get("/notes", (req, res) => {
-    let results = notes;
-
-    res.json(results);
+    res.json(notes);
 });
 
 router.post("/notes", (req, res) => {
-    req.body.id = notes.length.toString();
+    req.body.id = generateId(notes);
     let newNote = req.body;
-    console.log(notes);
-    createNewNote(newNote, notes);
-    res.send(newNote);
-    console.log(notes);
+    console.log(newNote);
+    if (validateNote(newNote)) {
+        addNewNote(newNote, notes);
+        res.send(newNote);
+    }
 });
 
 module.exports = router;
