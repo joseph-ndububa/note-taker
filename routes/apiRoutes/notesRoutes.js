@@ -8,4 +8,17 @@ router.get("/notes", (req, res) => {
     console.log(results);
 });
 
+router.post("/notes", (req, res) => {
+    notes.push(req.body);
+
+    fs.writeFile('../../develop/db/db', notes, (err) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log("db updated");
+        }
+    })
+});
+
 module.exports = router;
