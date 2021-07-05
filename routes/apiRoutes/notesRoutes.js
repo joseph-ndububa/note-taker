@@ -20,12 +20,12 @@ router.post("/notes", (req, res) => {
 
 router.delete("/notes/:id", (req, res) => {
     let noteId = req.params.id;
-    if (!deleteNote(noteId, notes)) {
-        res.sendStatus(404);
-    }
-    else {
+    if (notes.filter(note => note.id == noteId)) {
         deleteNote(noteId, notes);
         res.sendStatus(200);
+    }
+    else {
+        res.sendStatus(404);
     }
 });
 
