@@ -5,7 +5,7 @@
 
 Note taker is a web application that enables users to write and save notes. It uses an Express.js back end to save and retrieve note data.
 
-Click [here]() to access the live application.
+Click [here](https://alluring-lake-clark-53404.herokuapp.com/index.html) to access the live application.
 
 ## Table of Contents
 
