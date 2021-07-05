@@ -5,6 +5,8 @@
 
 Note taker is a web application that enables users to write and save notes. It uses an Express.js back end to save and retrieve note data.
 
+Click [here]() to access the live application.
+
 ## Table of Contents
 
 * [Usage](#usage)
@@ -22,7 +24,7 @@ Note taker is a web application that enables users to write and save notes. It u
 
 - You may delete existing notes by pressing the delete icons on the left-hand side.
 
-![Screenshot](https://i.imgur.com/eeAUjuR.jpg)
+![Screenshot](https://i.imgur.com/DNZPjHu.jpg)
 
 ## Questions
 
